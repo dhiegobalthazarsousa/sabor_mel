@@ -6,11 +6,9 @@
 package eagles.sabor_mel.control;
 
 import eagles.sabor_mel.dao.FuncionarioDAO;
-import eagles.sabor_mel.dao.PessoaDAO;
-import eagles.sabor_mel.model.Bairro;
-import eagles.sabor_mel.model.Cidade;
-import eagles.sabor_mel.model.Endereco;
+import eagles.sabor_mel.model.Acesso;
 import eagles.sabor_mel.model.Funcionario;
+import eagles.sabor_mel.model.Sexo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,32 +40,7 @@ public class ControllerFuncionario {
         specFuncionario.put("username", funcionario.getUsuario());
         specFuncionario.put("senha", funcionario.getSenha());
         return specFuncionario;
-    }
-
-    public boolean cadastrar(String usuario, String senha, String tipoFuncionario,
-            String nome, String email, String dataNascimento,
-            String numeroDocumento, String tipoDocumento,
-            String logradouro, String numeroEndereco, String cep,
-            String nomeBairro,
-            String nomeCidade,
-            String nomeEstado, String uf) {
-        
-        //Funcionario funcionario = new Funcionario(usuario, senha, tipoFuncionario);
-        //Pessoa pessoa = new Pessoa(nome, email, transformData(dataNascimento));
-       // Documento documento = new Documento(numeroDocumento, tipoDocumento);
-        Endereco endereco = new Endereco();
-        Bairro bairro = new Bairro(nomeBairro);
-        Cidade cidade = new Cidade(nomeCidade);
-       // Estado estado = new Estado(uf);
-        
-       // cidade.setEstado(estado);
-        bairro.setCidade(cidade);
-        endereco.setBairro(bairro);
-       // pessoa.setEndereco(endereco);
-       // pessoa.setDocumento(documento);
-        
-        PessoaDAO dao = new PessoaDAO();
-        return false; //dao.persist(pessoa);
+        Funcioanrio func = new Funcionario();
     }
 
     private Calendar transformData(String data) {
